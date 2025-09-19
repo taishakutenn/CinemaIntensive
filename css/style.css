@@ -1,0 +1,138 @@
+/* Общие стили */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter";
+}
+
+.container {
+    padding-left: 24px;
+    padding-right: 24px;
+    max-width: 1196px;
+    margin: 0 auto;
+}
+
+/* Хедер */
+.header {
+    margin-top: 34px;
+    margin-bottom: 15px;
+}
+
+.header-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+}
+
+.logo__title {
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.logo__subtitle {
+    font-weight: 300;
+    font-size: 12px;
+}
+
+.header-contols {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.header-contols a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header-contols a:hover {
+    color: rgba(255, 73, 73, 1);
+}
+
+.header-conrols__burger {
+    display: none;
+}
+
+/* Мейн-часть, секция поиска */
+.search-box {
+    border-radius: 5px;
+    background: rgba(255, 73, 73, 1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    padding: 3px;
+    gap: 3px;
+}
+
+.search-box input {
+    flex-grow: 1;
+    height: 100%;
+    border-radius: 3px;
+    border: none;
+    padding: 13px 34px;
+    padding-top: 15px; /* Что бы текст плейсхолдера визуально стоял по середине */
+    min-width: 0;
+}
+
+.search-box input:focus {
+    border: none;
+    outline: none;
+}
+
+.search-box button {
+    height: 100%;
+    background-color: inherit;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.search-box button:hover {
+    cursor: pointer;
+}
+
+.search-button__find {
+    color: rgba(255, 255, 255, 1);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+/* Медиазапросы */
+@media (max-width: 599px) {
+    /* Хедер */
+    .header-contols {
+        display: none;
+    }
+    
+    .header-conrols__burger {
+        display: block;
+        align-self: flex-start;
+    }
+
+    /* Мейн, секция поиска */
+    .search-box input {
+        padding: 13px 17px;
+    }
+
+    .search-box button {
+        padding: 0 13px;
+    }
+
+    .search-button__find {
+        display: none;
+    }
+}
+
