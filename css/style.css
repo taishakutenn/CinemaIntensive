@@ -63,7 +63,15 @@ body {
     display: none;
 }
 
+main {
+    margin-bottom: 95px;
+}
+
 /* Мейн-часть, секция поиска */
+.search {
+    margin-bottom: 40px;
+}
+
 .search-box {
     border-radius: 5px;
     background: rgba(255, 73, 73, 1);
@@ -109,8 +117,214 @@ body {
     font-weight: 400;
 }
 
+/* Мейн-часть, секция контента с фильмами */
+.content-box {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 30px;   
+}
+
+.content-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-main__title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.content-film {
+    display: flex;
+    justify-content: space-between;
+    gap: 28px;
+    width: 100%;
+}
+
+/* Детальная странциа фильма */
+.content-film--img {
+    width: 100%;
+}
+
+.content-film--info {
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.content-film--info--summary {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-bottom: 30px;
+}
+
+.content-film--info--summary__title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.content-film--info--summary__title b{
+    font-weight: 700;
+}
+
+.content-film--info--description {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    flex-grow: 1;
+}
+
+.btn {
+    padding: 16px 98px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.btn-danger {
+    color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(255, 73, 73, 1);
+    background: rgba(255, 73, 73, 1);
+}
+
+.content-film--info__btn {
+    align-self: flex-start;
+}
+
+/* Карточки фильмов */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    row-gap: 38px;
+    max-width: calc(264px * 3 + 60px);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: calc((100% - 60px) / 3);
+}
+
+.card__img {
+    border-radius: 10px;
+}
+
+.card-info {
+    margin-top: 12px;
+}
+
+.card-info--name {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.card-info--name b {
+    font-weight: 700px;
+}
+
+.card-info--genres {
+    margin: 0;
+    margin-top: 4px;
+    color: rgba(134, 134, 134, 1);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.card-info--raiting {
+    margin: 0;
+    margin-top: 11px;
+    color: rgba(4, 163, 30, 1);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* Мейн-часть, секция контента с сайдбаром */
+.content-sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 13px;
+    max-width: 262px;
+}
+
+/* Сайдбар рекомендации */
+.content-sidebar--recomendation {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content-sidebar--recomendation__title {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.content-sidebar--recomendation-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.recomendation-item__title {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.recomendation-item__text {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* Сайдбар лицензии */
+.content-sidebar-license {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.content-sidebar-license__item {
+    margin: 0;
+    color: rgba(170, 170, 170, 1);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.content-sidebar-license__item a {
+    text-decoration: none;
+    color: inherit;
+    text-decoration-line: underline;
+}
+
 
 /* Медиазапросы */
+@media (max-width: 799px) {
+    /* Карточки фильмов */
+    .cards-container {
+        column-gap: 30px;
+        row-gap: 38px;
+        max-width: calc(264px * 2 + 30px);
+    }
+
+    .card {
+        width: calc((100% - 30px) / 2);
+    }    
+}
+
 @media (max-width: 599px) {
     /* Хедер */
     .header-contols {
@@ -133,6 +347,34 @@ body {
 
     .search-button__find {
         display: none;
+    }
+
+    /* Мейн, секция карточек */
+    .content-box {
+        flex-direction: column;
+    }
+
+    .content-main__title {
+        margin-bottom: 32px;
+    }
+
+    /* Карточки фильмов */
+    .cards-container {
+        max-width: 100%;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    /* Мейн, секция сайдбара */
+    .content-sidebar {
+        margin-top: 39px;
+        max-width: 100%;
+    }
+
+    .content-sidebar--recomendation {
+        margin-bottom: 120px;
     }
 }
 
